@@ -1,4 +1,8 @@
-// init project
+/* This code calls a python function, that returns an analysis of an image passed based on brisque
+(Blind/Referenceless Image Spatial Quality Evaluator) analysis, the lower the score returned, 
+ the better quality of the image. 
+ Brisque evaluations are good to find blur, noise and distortions in images
+*/
 const express = require("express");
 const bodyParser = require("body-parser");
 const {spawn} = require('child_process');
