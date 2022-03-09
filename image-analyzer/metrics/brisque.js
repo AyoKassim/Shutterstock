@@ -7,7 +7,7 @@ const fs = require("fs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-module.exports = function uploadSize(uploadName)
+module.exports = async function uploadSize(uploadName)
 {
       // Reading Python files
       var dataToSend;
@@ -23,11 +23,14 @@ module.exports = function uploadSize(uploadName)
       console.error(`stderr: ${data}`);
      });
 
-     // in close event we are sure that stream from child process is closed
+     // in close event we are sure that stream from child process is closed, use await to make sure the process is done before returning
+     await new Promise((resolve) => {
      python.on('exit', (code) => {
      console.log(`child process exited with code ${code}, ${dataToSend}`);
+     resolve();
+    })
      
     }); 
     
-    
+    return dataToSend
 };
