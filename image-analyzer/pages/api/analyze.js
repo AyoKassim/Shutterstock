@@ -28,7 +28,7 @@ apiRoute.post(upload.single('image'), async (req, res, next) => {
   {
     const metricName = fileName.split('.')[0] // only consider the name and ignore '.js' at the end of the file name, e.g. size in "size.js"
     const analyzer = require(`../../metrics/${fileName}`) //imports a function that uses filename to find upload and returns an analysis JSON
-    const metric = analyzer(req.file.originalname)
+    const metric = await analyzer(req.file.originalname)
     response[`${metricName}`] = metric
   }
 
