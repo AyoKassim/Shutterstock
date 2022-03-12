@@ -31,6 +31,7 @@ apiRoute.post(upload.single('image'), async (req, res, next) => {
     const metric = analyzer(req.file.originalname)
     response[`${metricName}`] = metric
   }
+
   res.status(200)
   res.json(response)
   res.end()
