@@ -17,7 +17,9 @@
         </div>
       </nav>
       <h1 style = "text-align: center;">Results of Analysis</h1>
-      <p style = "text-align: center;" id = "test"></p>
+      <h2 style = "text-align: center;" id = "test"></h2>
+      <h2 style = "text-align: center;" id = "test2"></h2>
+      <h2 style = "text-align: center;" id = "test3"></h2>
       <script>
           let myRes = new Request('/generated.json')
           fetch(myRes)
@@ -25,8 +27,15 @@
                 return resp.json();
             })
             .then(function(data) {
-                document.getElementById("test").innerHTML = data[0].name + " Score: " + data[0].value;
-            })
+                for(let i = 0; i < Object.keys(data).length; i++){
+                var tag = document.createElement("h2");
+                var text = document.createTextNode(data[i].name + " Score: " + data[i].metric); 
+                tag.style = 'text-align: center;';
+                tag.appendChild(text); // <p>TEST TEXT</p>
+                var element = document.getElementsByTagName("body")[0];
+                element.appendChild(tag); // <body> <p>TEST TEXT</p> </body>
+                }
+              })
       </script>
     
 </body>

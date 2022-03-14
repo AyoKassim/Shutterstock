@@ -31,6 +31,7 @@ export default function Home() {
      
     </div>
   </div>
+  <h3 className={styles.subText}>Select and image to rate and click submit!</h3>
 </div>
   
 </div>

@@ -116,8 +116,13 @@
 }
 
 .title{
+  padding-top: 100px;
   margin-left: auto;
   margin-right: auto;
+}
+.subText{
+  text-align: center;
+  padding-top: 50px;
 }
 
 @media (max-width: 600px) {
