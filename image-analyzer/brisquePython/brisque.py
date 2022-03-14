@@ -1,7 +1,7 @@
 from turtle import screensize
 import numpy as np 
 from skimage import io, img_as_float
-import imquality.brisque as brisque
+import brisque_edited as brisque
 import sys 
 
 uploadName = './uploads/'+sys.argv[1]
