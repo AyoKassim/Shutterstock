@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+ node:
+  image: nikolaik/python-nodejs:latest
+  ports:
+   - "3000:3000"
+  volumes:
+   - ../image-analyzer:/image-analyzer
+  stdin_open: true
+  tty: true
+  cap_add:
+   - ALL
+  working_dir: /image-analyzer
+  command:
+   "./start.sh"
