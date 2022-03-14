@@ -5,12 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 <body>
-    <p name="thing"> hello this is a proof of concept</p>
-
-    <script>const x = document.getElementsByName('thing')[0]
-    x.innerHTML = 'this is the result of an pia call'
-    </script>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container" style="margin-left: 0;">
+          <a class="navbar-brand" href="#">
+            <img src="/logo.png" width = "200px" />
+          </a>
+        </div>
+      </nav>
+      <h1 style = "text-align: center;">Results of Analysis</h1>
+      <p style = "text-align: center;" id = "test"></p>
+      <script>
+          let myRes = new Request('/generated.json')
+          fetch(myRes)
+            .then(function(resp){
+                return resp.json();
+            })
+            .then(function(data) {
+                document.getElementById("test").innerHTML = data[0].name + " Score: " + data[0].value;
+            })
+      </script>
+    
 </body>
 </html>
