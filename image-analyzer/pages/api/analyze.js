@@ -1,6 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import nextConnect from "next-connect";
 import multer from "multer";
+import { resolve } from "path";
+import { stringify } from "querystring";
 
 //route setup with next connect
 const apiRoute = nextConnect({
@@ -31,6 +33,7 @@ apiRoute.post(upload.single('image'), async (req, res, next) => {
     res.end();
   });
 });
+
 
 export default apiRoute;
 
