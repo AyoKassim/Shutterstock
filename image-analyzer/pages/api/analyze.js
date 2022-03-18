@@ -38,7 +38,7 @@ apiRoute.post(upload.single('image'), async (req, res, next) => {
     }
 
     const responseString = await JSON.stringify(response);
-    console.log(responseString);
+    
   fs.writeFileSync("./public/generated.json", responseString);
 
   fs.readFile("./pages/api/index.html", function (error, data) {

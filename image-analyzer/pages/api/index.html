@@ -21,22 +21,24 @@
       <h2 style = "text-align: center;" id = "test2"></h2>
       <h2 style = "text-align: center;" id = "test3"></h2>
       <script>
-          let myRes = new Request('/generated.json')
-          fetch(myRes)
-            .then(function(resp){
-                return resp.json();
-            })
-            .then(function(data) {
-                for(let i = 0; i < Object.keys(data).length; i++){
-                var key = Object.keys(data)[i]
-                var tag = document.createElement("h2");
-                var text = document.createTextNode(data[key].name + " Score: " + data[key].metric); 
-                tag.style = 'text-align: center;';
-                tag.appendChild(text); // <p>TEST TEXT</p>
-                var element = document.getElementsByTagName("body")[0];
-                element.appendChild(tag); // <body> <p>TEST TEXT</p> </body>
-                }
-              })
+        async function getStuff()
+        {
+          const response = await fetch(new Request('/generated.json'))
+          const data = await response.json();
+          console.log(`data is: ${data}`)
+          const keys = Object.keys(data);
+          const values = Object.values(data);
+          for(let i = 0; i < keys.length; i++){
+            const key = keys[i]; const value = values[i];
+            var tag = document.createElement("h2");
+            var text = document.createTextNode(key + " Score: " + value); 
+            tag.style = 'text-align: center;';
+            tag.appendChild(text); // <p>TEST TEXT</p>
+            var element = document.getElementsByTagName("body")[0];
+            element.appendChild(tag); // <body> <p>TEST TEXT</p> </body>
+          }
+        }
+        getStuff();
       </script>
     
 </body>
