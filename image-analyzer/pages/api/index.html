@@ -28,8 +28,9 @@
             })
             .then(function(data) {
                 for(let i = 0; i < Object.keys(data).length; i++){
+                var key = Object.keys(data)[i]
                 var tag = document.createElement("h2");
-                var text = document.createTextNode(data[i].name + " Score: " + data[i].metric); 
+                var text = document.createTextNode(data[key].name + " Score: " + data[key].metric); 
                 tag.style = 'text-align: center;';
                 tag.appendChild(text); // <p>TEST TEXT</p>
                 var element = document.getElementsByTagName("body")[0];
