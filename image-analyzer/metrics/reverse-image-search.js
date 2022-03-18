@@ -8,20 +8,14 @@ sstk.setBasicAuth(applicationClientId, applicationClientSecret); // pass the con
 const computerVisionApi = new sstk.ComputerVisionApi(); // initialise Shutterstock Computer Vision
 
 // reverse image search method
-module.exports = function reverseImageSearch(uploadName){
+module.exports = async function reverseImageSearch(uploadName){
 	const imageFile = fs.readFileSync(`./uploads/${uploadName}`); // return the contents of uploadName
 	const base64File = Buffer.from(imageFile).toString("base64"); // encode the image to Base 64
 
 	const body = new sstk.ImageCreateRequest(base64File); // request to create the Base 64 encoded image
 	
-	computerVisionApi.uploadImage(body) // upload the image
-	.then((data) => {
-		return computerVisionApi.getSimilarImages(data.upload_id); // find images similar to the one uploaded
-	})
-	.then((data) => {
-		console.log(data.total_count); // print the results of the reverse image search
-	})
-	.catch((error) => {
-		console.error(error); // print any errors 
-	});
+	let data = await computerVisionApi.uploadImage(body); // upload the image
+	let imageSearch = await computerVisionApi.getSimilarImages(data.upload_id); // get images similar to the one uploaded
+
+	return imageSearch.total_count; // return number of images found
 }
