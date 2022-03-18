@@ -3,7 +3,7 @@ import sys
 
 pytrend = TrendReq()
 total = 0
-weeks = 2
+weeks = 2       ##variable for the amount weeks we want to check the trending score for
 amount_of_trends = len(sys.argv)
 for x in range(1, amount_of_trends):
     pytrend.build_payload(kw_list=[sys.argv[x]])
