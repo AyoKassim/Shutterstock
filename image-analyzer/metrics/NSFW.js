@@ -38,8 +38,8 @@ const APICred = require('@azure/ms-rest-js').ApiKeyCredentials;
     //isNSFW();
 //};
 
-    const key = '';
-    const endpoint = '';
+    const key = 'def43206d9e04e1e92c0b1d042d0f3ed';
+    const endpoint = 'https://sweng19.cognitiveservices.azure.com/';
 
     const computerVisionClient = new ComputerVisionClient(
       new ApiKeyCredentials({inHeader: {'SWENG-key': key} }), endpoint
@@ -48,13 +48,16 @@ const APICred = require('@azure/ms-rest-js').ApiKeyCredentials;
 module.exports = function computerVision(uploadName) {
   async.series([
     async function () {
-      const form = new formdata();
-      form.append("image", fs.createReadStream(`./uploads/${uploadName}`));
+      //const form = new formdata();
+      //form.append("image", fs.createReadStream(`./uploads/${uploadName}`));
+
+      const imageFile = fs.readFileSync(`./uploads/${uploadName}`);
+      const based64 = Buffer.from(imageFile).toString("base64");
 
       const isIt = flag => flag ? 'is' : "isn't";
 
       console.log('Analyzing...');
-      const sfw = (await computerVisionClient.analyzeImage(uploadName,
+      const sfw = (await computerVisionClient.analyzeImage(imageFile,
         {visualFeatures: ['Adult']})).sfw
         console.log(`This probably ${isIt(sfw.isAdultContent)} adult content (${sfw.adultScore.toFixed(4)} score)`);
     },
@@ -66,6 +69,8 @@ module.exports = function computerVision(uploadName) {
   ], (err) => {
     throw (err);
   });
+
+  return computerVision();
 }
 
-computerVision();
+//computerVision();
