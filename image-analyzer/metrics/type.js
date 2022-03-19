@@ -11,8 +11,8 @@ const computerVisionClient = require('@azure/cognitiveservices-computervision').
 const APICred = require('@azure/ms-rest-js').ApiKeyCredentials;
 
 
-    const key = 'def43206d9e04e1e92c0b1d042d0f3ed';
-    const endpoint = 'https://sweng19.cognitiveservices.azure.com/';
+    const key = '';
+    const endpoint = '';
 
     const computerVisionClient = new ComputerVisionClient(
       new ApiKeyCredentials({inHeader: {'SWENG-key': key} }), endpoint
