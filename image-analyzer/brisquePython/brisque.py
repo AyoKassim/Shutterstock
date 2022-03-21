@@ -8,7 +8,7 @@ uploadName = './public/'+sys.argv[1]
 img = img_as_float(io.imread(uploadName, as_gray=True))
 score = brisque.score(img)
 
-print('Brisque score = ', round(score, 2), end='')
+print( round(score, 2), end='')
 
 
 sys.stdout.flush()
