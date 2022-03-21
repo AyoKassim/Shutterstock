@@ -2,7 +2,7 @@ const fs = require("fs");
 
 module.exports = function uploadSize(uploadName) {
   const stats = fs.statSync(
-    `./uploads/${uploadName}`
+    `./public/${uploadName}`
   );
   return stats.size
 };

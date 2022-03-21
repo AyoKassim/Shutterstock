@@ -13,7 +13,7 @@ const apiRoute = nextConnect({
 
 //save uploads to the filesystem
 const storage = multer.diskStorage({
-  destination: "./uploads",
+  destination: "./public",
   filename: (req, file, callback) => {callback(null, file.originalname)},
 });
 const upload = multer({ storage: storage });
