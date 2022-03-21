@@ -1,1 +1,658 @@
-{"name":"New_Grange_Rd0.jpg","brisque":"Brisque score =  22.9","reverse-image-search":424,"size":437119,"tags":{"result":{"tags":[{"confidence":48.9993553161621,"tag":{"en":"maze"}},{"confidence":27.327320098877,"tag":{"en":"map"}},{"confidence":24.5402317047119,"tag":{"en":"landscape"}},{"confidence":22.4067001342773,"tag":{"en":"representation"}},{"confidence":22.0637722015381,"tag":{"en":"tree"}},{"confidence":18.2711353302002,"tag":{"en":"forest"}},{"confidence":17.676794052124,"tag":{"en":"plant"}},{"confidence":16.8929996490479,"tag":{"en":"travel"}},{"confidence":16.4429054260254,"tag":{"en":"environment"}},{"confidence":16.4038314819336,"tag":{"en":"pattern"}},{"confidence":15.386305809021,"tag":{"en":"natural"}},{"confidence":15.3229084014893,"tag":{"en":"tropical"}},{"confidence":15.3123579025269,"tag":{"en":"wallpaper"}},{"confidence":15.2769899368286,"tag":{"en":"texture"}},{"confidence":15.2728662490845,"tag":{"en":"mosaic"}},{"confidence":14.7818288803101,"tag":{"en":"fern"}},{"confidence":14.1427373886108,"tag":{"en":"summer"}},{"confidence":14.0324144363403,"tag":{"en":"light"}},{"confidence":13.5007381439209,"tag":{"en":"design"}},{"confidence":12.6857900619507,"tag":{"en":"outdoors"}},{"confidence":12.6445360183716,"tag":{"en":"grass"}},{"confidence":12.3353900909424,"tag":{"en":"rural"}},{"confidence":12.249116897583,"tag":{"en":"rain"}},{"confidence":11.9866485595703,"tag":{"en":"foliage"}},{"confidence":11.7436561584473,"tag":{"en":"peacock"}},{"confidence":11.6749477386475,"tag":{"en":"color"}},{"confidence":11.6610679626465,"tag":{"en":"jungle"}},{"confidence":11.5604610443115,"tag":{"en":"trees"}},{"confidence":11.4667444229126,"tag":{"en":"outdoor"}},{"confidence":11.3726873397827,"tag":{"en":"climate"}},{"confidence":10.6749696731567,"tag":{"en":"water"}},{"confidence":9.91715621948242,"tag":{"en":"scenery"}},{"confidence":9.63361644744873,"tag":{"en":"lush"}},{"confidence":9.59834575653076,"tag":{"en":"vegetation"}},{"confidence":9.51747989654541,"tag":{"en":"scene"}},{"confidence":9.41524791717529,"tag":{"en":"spring"}},{"confidence":9.31210041046143,"tag":{"en":"colorful"}},{"confidence":9.23100662231445,"tag":{"en":"park"}},{"confidence":9.07213973999023,"tag":{"en":"tourism"}},{"confidence":9.0283203125,"tag":{"en":"art"}},{"confidence":8.92704677581787,"tag":{"en":"sky"}},{"confidence":8.81675624847412,"tag":{"en":"surface"}},{"confidence":8.80039215087891,"tag":{"en":"woody plant"}},{"confidence":8.77590274810791,"tag":{"en":"scenic"}},{"confidence":8.77304363250732,"tag":{"en":"agriculture"}},{"confidence":8.59717655181885,"tag":{"en":"woods"}},{"confidence":8.59170913696289,"tag":{"en":"transducer"}},{"confidence":8.57662677764893,"tag":{"en":"garden"}},{"confidence":8.48000049591064,"tag":{"en":"structure"}},{"confidence":8.42285442352295,"tag":{"en":"palm"}},{"confidence":8.22317981719971,"tag":{"en":"countryside"}},{"confidence":8.19933223724365,"tag":{"en":"shape"}},{"confidence":8.06023597717285,"tag":{"en":"flora"}},{"confidence":8.00597286224365,"tag":{"en":"architecture"}},{"confidence":8.00450134277344,"tag":{"en":"mountain"}},{"confidence":7.90754127502441,"tag":{"en":"growth"}},{"confidence":7.87460327148438,"tag":{"en":"building"}},{"confidence":7.77964639663696,"tag":{"en":"leaf"}},{"confidence":7.77062749862671,"tag":{"en":"nobody"}},{"confidence":7.70028209686279,"tag":{"en":"outside"}},{"confidence":7.52828168869019,"tag":{"en":"field"}},{"confidence":7.52650785446167,"tag":{"en":"environmental"}},{"confidence":7.51570129394531,"tag":{"en":"crop"}},{"confidence":7.50183773040771,"tag":{"en":"wood"}},{"confidence":7.49202108383179,"tag":{"en":"decoration"}},{"confidence":7.44596099853516,"tag":{"en":"vascular plant"}},{"confidence":7.36354637145996,"tag":{"en":"vacation"}},{"confidence":7.32313871383667,"tag":{"en":"island"}},{"confidence":7.18645572662354,"tag":{"en":"futuristic"}},{"confidence":7.13624858856201,"tag":{"en":"farm"}},{"confidence":7.03639507293701,"tag":{"en":"web"}},{"confidence":7.03515911102295,"tag":{"en":"sea"}}]},"status":{"text":"","type":"success"}}}
+{
+    "name": "git.png",
+    "brisque": "Brisque score =  143.69",
+    "reverse-image-search": 472,
+    "size": 67920,
+    "tags": {
+        "result": {
+            "tags": [
+                {
+                    "confidence": 42.8659629821777,
+                    "tag": {
+                        "en": "bank"
+                    }
+                },
+                {
+                    "confidence": 40.480167388916,
+                    "tag": {
+                        "en": "depository"
+                    }
+                },
+                {
+                    "confidence": 39.2021255493164,
+                    "tag": {
+                        "en": "facility"
+                    }
+                },
+                {
+                    "confidence": 38.3535995483398,
+                    "tag": {
+                        "en": "reflection"
+                    }
+                },
+                {
+                    "confidence": 36.5984115600586,
+                    "tag": {
+                        "en": "picture"
+                    }
+                },
+                {
+                    "confidence": 30.5092010498047,
+                    "tag": {
+                        "en": "design"
+                    }
+                },
+                {
+                    "confidence": 29.2192440032959,
+                    "tag": {
+                        "en": "business"
+                    }
+                },
+                {
+                    "confidence": 28.6797981262207,
+                    "tag": {
+                        "en": "representation"
+                    }
+                },
+                {
+                    "confidence": 22.3614082336426,
+                    "tag": {
+                        "en": "element"
+                    }
+                },
+                {
+                    "confidence": 22.1022796630859,
+                    "tag": {
+                        "en": "creative"
+                    }
+                },
+                {
+                    "confidence": 22.0040016174316,
+                    "tag": {
+                        "en": "paper"
+                    }
+                },
+                {
+                    "confidence": 21.9282970428467,
+                    "tag": {
+                        "en": "graphic"
+                    }
+                },
+                {
+                    "confidence": 20.9108486175537,
+                    "tag": {
+                        "en": "decorative"
+                    }
+                },
+                {
+                    "confidence": 20.5010070800781,
+                    "tag": {
+                        "en": "idea"
+                    }
+                },
+                {
+                    "confidence": 20.4589900970459,
+                    "tag": {
+                        "en": "art"
+                    }
+                },
+                {
+                    "confidence": 20.1281795501709,
+                    "tag": {
+                        "en": "data"
+                    }
+                },
+                {
+                    "confidence": 19.2053356170654,
+                    "tag": {
+                        "en": "creation"
+                    }
+                },
+                {
+                    "confidence": 19.2046546936035,
+                    "tag": {
+                        "en": "year"
+                    }
+                },
+                {
+                    "confidence": 18.3777961730957,
+                    "tag": {
+                        "en": "letter"
+                    }
+                },
+                {
+                    "confidence": 18.3770332336426,
+                    "tag": {
+                        "en": "decoration"
+                    }
+                },
+                {
+                    "confidence": 18.1155185699463,
+                    "tag": {
+                        "en": "cloud"
+                    }
+                },
+                {
+                    "confidence": 17.7133026123047,
+                    "tag": {
+                        "en": "decor"
+                    }
+                },
+                {
+                    "confidence": 17.6745872497559,
+                    "tag": {
+                        "en": "definition"
+                    }
+                },
+                {
+                    "confidence": 17.6635341644287,
+                    "tag": {
+                        "en": "month"
+                    }
+                },
+                {
+                    "confidence": 17.1550331115723,
+                    "tag": {
+                        "en": "collection"
+                    }
+                },
+                {
+                    "confidence": 16.7603893280029,
+                    "tag": {
+                        "en": "association"
+                    }
+                },
+                {
+                    "confidence": 16.5246429443359,
+                    "tag": {
+                        "en": "calendar"
+                    }
+                },
+                {
+                    "confidence": 16.5065174102783,
+                    "tag": {
+                        "en": "artwork"
+                    }
+                },
+                {
+                    "confidence": 16.3080005645752,
+                    "tag": {
+                        "en": "date"
+                    }
+                },
+                {
+                    "confidence": 15.7603492736816,
+                    "tag": {
+                        "en": "pattern"
+                    }
+                },
+                {
+                    "confidence": 15.5126600265503,
+                    "tag": {
+                        "en": "journal"
+                    }
+                },
+                {
+                    "confidence": 15.455041885376,
+                    "tag": {
+                        "en": "blank"
+                    }
+                },
+                {
+                    "confidence": 15.4503946304321,
+                    "tag": {
+                        "en": "modern"
+                    }
+                },
+                {
+                    "confidence": 15.3034811019897,
+                    "tag": {
+                        "en": "office"
+                    }
+                },
+                {
+                    "confidence": 15.0960359573364,
+                    "tag": {
+                        "en": "composition"
+                    }
+                },
+                {
+                    "confidence": 15.0817375183105,
+                    "tag": {
+                        "en": "information"
+                    }
+                },
+                {
+                    "confidence": 14.9512510299683,
+                    "tag": {
+                        "en": "day"
+                    }
+                },
+                {
+                    "confidence": 14.8737001419067,
+                    "tag": {
+                        "en": "page"
+                    }
+                },
+                {
+                    "confidence": 14.6822538375854,
+                    "tag": {
+                        "en": "diary"
+                    }
+                },
+                {
+                    "confidence": 14.4207811355591,
+                    "tag": {
+                        "en": "advertising"
+                    }
+                },
+                {
+                    "confidence": 14.2230367660522,
+                    "tag": {
+                        "en": "menu"
+                    }
+                },
+                {
+                    "confidence": 14.1823558807373,
+                    "tag": {
+                        "en": "copy"
+                    }
+                },
+                {
+                    "confidence": 14.1307735443115,
+                    "tag": {
+                        "en": "conceptual"
+                    }
+                },
+                {
+                    "confidence": 13.9038848876953,
+                    "tag": {
+                        "en": "cover"
+                    }
+                },
+                {
+                    "confidence": 13.8373899459839,
+                    "tag": {
+                        "en": "monthly"
+                    }
+                },
+                {
+                    "confidence": 13.82532787323,
+                    "tag": {
+                        "en": "associated"
+                    }
+                },
+                {
+                    "confidence": 13.8167934417725,
+                    "tag": {
+                        "en": "planner"
+                    }
+                },
+                {
+                    "confidence": 13.8110513687134,
+                    "tag": {
+                        "en": "week"
+                    }
+                },
+                {
+                    "confidence": 13.7111377716064,
+                    "tag": {
+                        "en": "more"
+                    }
+                },
+                {
+                    "confidence": 13.5890398025513,
+                    "tag": {
+                        "en": "border"
+                    }
+                },
+                {
+                    "confidence": 13.5359783172607,
+                    "tag": {
+                        "en": "advertisement"
+                    }
+                },
+                {
+                    "confidence": 13.518816947937,
+                    "tag": {
+                        "en": "collage"
+                    }
+                },
+                {
+                    "confidence": 13.2125549316406,
+                    "tag": {
+                        "en": "backdrop"
+                    }
+                },
+                {
+                    "confidence": 13.110050201416,
+                    "tag": {
+                        "en": "frame"
+                    }
+                },
+                {
+                    "confidence": 12.9929895401001,
+                    "tag": {
+                        "en": "new"
+                    }
+                },
+                {
+                    "confidence": 12.8335475921631,
+                    "tag": {
+                        "en": "ornate"
+                    }
+                },
+                {
+                    "confidence": 12.7565994262695,
+                    "tag": {
+                        "en": "organizer"
+                    }
+                },
+                {
+                    "confidence": 12.7499866485596,
+                    "tag": {
+                        "en": "schedule"
+                    }
+                },
+                {
+                    "confidence": 12.7358064651489,
+                    "tag": {
+                        "en": "daily"
+                    }
+                },
+                {
+                    "confidence": 12.6670198440552,
+                    "tag": {
+                        "en": "advertise"
+                    }
+                },
+                {
+                    "confidence": 12.2552757263184,
+                    "tag": {
+                        "en": "text"
+                    }
+                },
+                {
+                    "confidence": 12.1361780166626,
+                    "tag": {
+                        "en": "future"
+                    }
+                },
+                {
+                    "confidence": 12.1166400909424,
+                    "tag": {
+                        "en": "company"
+                    }
+                },
+                {
+                    "confidence": 12.0885143280029,
+                    "tag": {
+                        "en": "document"
+                    }
+                },
+                {
+                    "confidence": 11.9453506469727,
+                    "tag": {
+                        "en": "template"
+                    }
+                },
+                {
+                    "confidence": 11.9367008209229,
+                    "tag": {
+                        "en": "money"
+                    }
+                },
+                {
+                    "confidence": 11.8426675796509,
+                    "tag": {
+                        "en": "keywords"
+                    }
+                },
+                {
+                    "confidence": 11.7152948379517,
+                    "tag": {
+                        "en": "brochure"
+                    }
+                },
+                {
+                    "confidence": 11.4495296478271,
+                    "tag": {
+                        "en": "black"
+                    }
+                },
+                {
+                    "confidence": 11.2263021469116,
+                    "tag": {
+                        "en": "ornament"
+                    }
+                },
+                {
+                    "confidence": 11.0100975036621,
+                    "tag": {
+                        "en": "finance"
+                    }
+                },
+                {
+                    "confidence": 10.9476928710938,
+                    "tag": {
+                        "en": "window"
+                    }
+                },
+                {
+                    "confidence": 10.9358959197998,
+                    "tag": {
+                        "en": "communication"
+                    }
+                },
+                {
+                    "confidence": 10.7916650772095,
+                    "tag": {
+                        "en": "symbol"
+                    }
+                },
+                {
+                    "confidence": 10.7209463119507,
+                    "tag": {
+                        "en": "carpet"
+                    }
+                },
+                {
+                    "confidence": 10.7120065689087,
+                    "tag": {
+                        "en": "financial"
+                    }
+                },
+                {
+                    "confidence": 10.5774307250977,
+                    "tag": {
+                        "en": "mix"
+                    }
+                },
+                {
+                    "confidence": 10.1610488891602,
+                    "tag": {
+                        "en": "season"
+                    }
+                },
+                {
+                    "confidence": 10.0914716720581,
+                    "tag": {
+                        "en": "time"
+                    }
+                },
+                {
+                    "confidence": 9.94312381744385,
+                    "tag": {
+                        "en": "vintage"
+                    }
+                },
+                {
+                    "confidence": 9.91055011749268,
+                    "tag": {
+                        "en": "almanac"
+                    }
+                },
+                {
+                    "confidence": 9.84791851043701,
+                    "tag": {
+                        "en": "retro"
+                    }
+                },
+                {
+                    "confidence": 9.83826637268066,
+                    "tag": {
+                        "en": "annual"
+                    }
+                },
+                {
+                    "confidence": 9.69697284698486,
+                    "tag": {
+                        "en": "new year"
+                    }
+                },
+                {
+                    "confidence": 9.33725738525391,
+                    "tag": {
+                        "en": "holiday"
+                    }
+                },
+                {
+                    "confidence": 9.33622264862061,
+                    "tag": {
+                        "en": "web"
+                    }
+                },
+                {
+                    "confidence": 9.04247093200684,
+                    "tag": {
+                        "en": "sign"
+                    }
+                },
+                {
+                    "confidence": 9.0350341796875,
+                    "tag": {
+                        "en": "treasury"
+                    }
+                },
+                {
+                    "confidence": 8.99074554443359,
+                    "tag": {
+                        "en": "mosaic"
+                    }
+                },
+                {
+                    "confidence": 8.94651222229004,
+                    "tag": {
+                        "en": "antique"
+                    }
+                },
+                {
+                    "confidence": 8.9167366027832,
+                    "tag": {
+                        "en": "style"
+                    }
+                },
+                {
+                    "confidence": 8.90894031524658,
+                    "tag": {
+                        "en": "calender"
+                    }
+                },
+                {
+                    "confidence": 8.88428211212158,
+                    "tag": {
+                        "en": "agenda"
+                    }
+                },
+                {
+                    "confidence": 8.60642051696777,
+                    "tag": {
+                        "en": "corporate"
+                    }
+                },
+                {
+                    "confidence": 8.3779764175415,
+                    "tag": {
+                        "en": "old"
+                    }
+                },
+                {
+                    "confidence": 8.30822849273682,
+                    "tag": {
+                        "en": "swirl"
+                    }
+                },
+                {
+                    "confidence": 7.94377565383911,
+                    "tag": {
+                        "en": "pastry"
+                    }
+                },
+                {
+                    "confidence": 7.92971754074097,
+                    "tag": {
+                        "en": "icon"
+                    }
+                },
+                {
+                    "confidence": 7.87903022766113,
+                    "tag": {
+                        "en": "months"
+                    }
+                },
+                {
+                    "confidence": 7.8462963104248,
+                    "tag": {
+                        "en": "march"
+                    }
+                },
+                {
+                    "confidence": 7.8058876991272,
+                    "tag": {
+                        "en": "education"
+                    }
+                },
+                {
+                    "confidence": 7.79823923110962,
+                    "tag": {
+                        "en": "income"
+                    }
+                },
+                {
+                    "confidence": 7.5025839805603,
+                    "tag": {
+                        "en": "stock"
+                    }
+                },
+                {
+                    "confidence": 7.36705017089844,
+                    "tag": {
+                        "en": "note"
+                    }
+                },
+                {
+                    "confidence": 7.33394432067871,
+                    "tag": {
+                        "en": "book"
+                    }
+                },
+                {
+                    "confidence": 7.17842245101929,
+                    "tag": {
+                        "en": "food"
+                    }
+                },
+                {
+                    "confidence": 7.09483194351196,
+                    "tag": {
+                        "en": "job"
+                    }
+                }
+            ]
+        },
+        "status": {
+            "text": "",
+            "type": "success"
+        }
+    }
+}
