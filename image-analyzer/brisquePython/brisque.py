@@ -4,7 +4,7 @@ from skimage import io, img_as_float
 import brisque_edited as brisque
 import sys 
 
-uploadName = './uploads/'+sys.argv[1]
+uploadName = './public/'+sys.argv[1]
 img = img_as_float(io.imread(uploadName, as_gray=True))
 score = brisque.score(img)
 

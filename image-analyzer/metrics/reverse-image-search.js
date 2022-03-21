@@ -9,7 +9,7 @@ const computerVisionApi = new sstk.ComputerVisionApi(); // initialise Shuttersto
 
 // reverse image search method
 module.exports = async function reverseImageSearch(uploadName){
-	const imageFile = fs.readFileSync(`./uploads/${uploadName}`); // return the contents of uploadName
+	const imageFile = fs.readFileSync(`./public/${uploadName}`); // return the contents of uploadName
 	const base64File = Buffer.from(imageFile).toString("base64"); // encode the image to Base 64
 
 	const body = new sstk.ImageCreateRequest(base64File); // request to create the Base 64 encoded image
