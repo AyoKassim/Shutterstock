@@ -6,7 +6,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-module.exports = async function uploadSize(uploadName)
+module.exports = async function uploadSize()
 {
       // Reading Python files
       var dataToSend;
