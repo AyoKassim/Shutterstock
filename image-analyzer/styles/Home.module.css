@@ -104,8 +104,25 @@
 }
 
 .logo {
-  height: 1em;
-  margin-left: 0.5rem;
+  margin-left: 0 !important;
+  padding:10px;
+  padding-top: 5px;
+}
+
+.uploadForm{
+  padding-top: 100px;
+  padding-left: 20%;
+  
+}
+
+.title{
+  padding-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.subText{
+  text-align: center;
+  padding-top: 50px;
 }
 
 @media (max-width: 600px) {
@@ -114,3 +131,5 @@
     flex-direction: column;
   }
 }
+
+
