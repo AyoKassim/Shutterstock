@@ -34,4 +34,4 @@ We use various metrics to analyze images and they can be found in the "/image-an
 3. [@DylanFitzpatrick01](https://github.com/DylanFitzpatrick01)
 4. [@francsir](https://github.com/francsir)
 5. [@EmilsVasilis](https://github.com/EmilsVasilis)
-6. 
+6. [@taragallagherr](https://github.com/taragallagherr)
