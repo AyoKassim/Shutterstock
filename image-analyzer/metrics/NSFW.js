@@ -38,8 +38,8 @@ const APICred = require('@azure/ms-rest-js').ApiKeyCredentials;
     //isNSFW();
 //};
 
-    const key = 'def43206d9e04e1e92c0b1d042d0f3ed';
-    const endpoint = 'https://sweng19.cognitiveservices.azure.com/';
+    const key = process.env.AZURE_KEY;
+    const endpoint = process.env.AZURE_ENDPOINT;
 
     const computerVisionClient = new ComputerVisionClient(
       new ApiKeyCredentials({inHeader: {'SWENG-key': key} }), endpoint

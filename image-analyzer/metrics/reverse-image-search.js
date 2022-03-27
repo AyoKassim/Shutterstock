@@ -1,8 +1,8 @@
 const sstk = require("shutterstock-api"); // set the Shutterstock API for use
 const fs = require("fs"); // set file system for use
 
-const applicationClientId = "7J18HYrBHBWVmqTb8PIsrSb5xIe328Gz"; // set the consmumer ID for Shutterstock API
-const applicationClientSecret = "fI4RBKoYpd0UoZpT"; // set the consumer secret for the Shutterstock API
+const applicationClientId = process.env.SHUTTERSTOCK_ID; // set the consmumer ID for Shutterstock API
+const applicationClientSecret = process.env.SHUTTERSTOCK_SECRET; // set the consumer secret for the Shutterstock API
 sstk.setBasicAuth(applicationClientId, applicationClientSecret); // pass the consumer ID and consumer secret
 
 const computerVisionApi = new sstk.ComputerVisionApi(); // initialise Shutterstock Computer Vision
