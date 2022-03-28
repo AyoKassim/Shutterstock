@@ -12,7 +12,7 @@ Our project makes use of some online APIs for which one must acquire credentials
 Store these credentials in the project's "/image-analyzer/.env" file in the appropriate variables given.
 
 #### Metrics
-We use various metrics to analyze images and they can be found in the "/image-analyzer/metrics" folder. Each metric has an associated javascript module that exports a function which implements it and returns the relevant data. Adding or removing different metrics from the folder is reflected automatically in the app.
+We use various metrics to analyze images and they can be found in the "/image-analyzer/metrics" folder. Each metric has an associated javascript module that exports a function which implements it and returns the relevant data. Analysis output is saved in '/public/generated..json' for all metrics. This facilitates addition of extra metrics in the folder being automatically implemented in the next round of analytics. 
 
 ### Running the app using Docker (Must have Docker installed and running)
 1. Pull the nikolaik/python-nodejs Docker image with the command "docker pull nikolaik/python-nodejs". This image has Python and Node.js installed which are both needed for the project.
