@@ -9,9 +9,19 @@
         max-width: 650px;
         padding: 20px;
         margin: 30px auto;
-        background-color: rgb(200, 205, 214);
+        background-color: #f3f4f5;
         box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
         overflow: hidden;
+        border-radius: 10px;
+      }
+      #res{
+        max-width: 650px;
+        padding: 20px;
+        margin: 30px auto;
+        background-color: #f3f4f5;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        border-radius: 10px;
       }
       .img-res{
         float: left;
@@ -24,16 +34,31 @@
         margin: 0px auto;
         overflow: hidden;
         text-align: center;
+        
       }
 
       
     </style>
+    <style>
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: rgb(219, 223, 233);
+        height: 50px;
+        color: white;
+        text-align: center;
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+        margin-top: 15px;
+      }
+      </style>
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light border-bottom" style="background-color: rgb(255, 255, 255); border:5px; border-color: rgb(0, 0, 0);">
         <div class="container" style="margin-left: 0;">
           <a class="navbar-brand" href="#">
             <img src="/logo.png" width = "200px" />
@@ -47,20 +72,26 @@
           <div class = "col">
             <div id = "results"></div>
           </div>
-          <div class = "col" style="background-color: rgb(200, 205, 214); padding: 20px; margin: 30px auto; box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);">
+          <div class = "col" id = "res">
             <h2 style="margin: 30px auto; padding: 20px; padding-top: 0px; margin-top: 0px;">Explanation of Metrics</h2>
-            <p style="margin: 30px auto; padding: 20px;" ><strong>Brisque Analysis:</strong> A smaller score indicates better perceptual quality. Ideally less than 20, anything above 50 is probably blurry or noisy.
+            <p style="margin: 30px auto; padding: 20px;" ><strong>Brisque Analysis:</strong> A smaller score indicates better perceptual quality. Ideally less than 20, anything above 50 is most likely blurry or noisy.
             If your score is high, try retaking the image with more light or keep the camera steadier to reduce blurriness</p>
-            <p style="margin: 30px auto; padding: 20px;" ><strong>Similar Images:</strong> This is how many images that look similar to your uploaded image. A low score indicates
-            that your image is unique. Try to keep this figure around 500</p>
-            <p style="margin: 30px auto; padding: 20px;" ><strong>Sugested Tags:</strong> These are tags are generated based on the image content, and help with indentifying your image.</p>
-            <p style="margin: 30px auto; padding: 20px;" ><strong>Trendyness:</strong> This is scored out of 1. The closer to one the more topical the associated tags are which indicates a higher likelyhood to sell</p>
+            <p style="margin: 30px auto; padding: 20px;" ><strong>Similar Images:</strong> This is how many images that look similar to your uploaded image in the shutterstock image database. A low score indicates
+            that your image is unique. Try to keep this figure below 500.</p>
+            <p style="margin: 30px auto; padding: 20px;" ><strong>Sugested Tags:</strong> These are tags are generated based on the image content, and help with identifying your image, which allows customers to find your
+            image more easily.</p>
+            <p style="margin: 30px auto; padding: 20px;" ><strong>Trendiness:</strong> This is scored out of 1. The closer to one the more topical the associated tags are which indicates a higher likelyhood to sell</p>
           </div>
         </div>
       </div>
       <div class="back-button">
-      <form action="http://localhost:3000/">
-        <input type="submit" value="Go Back" />
+      <form action="http://localhost:3000/" style=" padding-bottom: 30px;">
+        <input type="submit" style="border: 0px; 
+        background-color:#f54336;
+        color: white;
+        padding: 5px;
+       
+        border-radius: 5px;" value="Back to Image Upload" />
       </form>
     </div>
     
@@ -82,7 +113,7 @@
             <p><strong>Amount of similar images found: </strong>${data["reverse-image-search"]}</p>
             <p><strong>Size of image uploaded: </strong>${data["size"]} bytes</p>
             <p><strong>Suggested Tags: </strong>${data.tags.result.tags[0].tag.en}, ${data.tags.result.tags[1].tag.en}, ${data.tags.result.tags[2].tag.en}, ${data.tags.result.tags[3].tag.en}, ${data.tags.result.tags[4].tag.en}</p>
-            <p><strong>Trendyness: </strong>${data["trendSearch"]}</p>
+            <p><strong>Trendiness: </strong>${data["trendSearch"]}</p>
           </div>
           `
           /**
@@ -107,6 +138,8 @@
         }
         getStuff();
       </script>
+
+
     
 </body>
 </html>
