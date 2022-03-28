@@ -12,7 +12,13 @@ Our project makes use of some online APIs for which one must acquire credentials
 Store these credentials in the project's "/image-analyzer/.env" file in the appropriate variables given.
 
 #### Metrics
-We use various metrics to analyze images and they can be found in the "/image-analyzer/metrics" folder. Each metric has an associated javascript module that exports a function which implements it and returns the relevant data. Analysis output is saved in '/public/generated..json' for all metrics. This facilitates addition of extra metrics in the folder being automatically implemented in the next round of analytics. 
+We use various metrics to analyze images and they can be found in the "/image-analyzer/metrics" folder. Each metric has an associated javascript module that exports a function which implements it and returns the relevant data. Analysis output is saved in '/public/generated..json' for all metrics. This facilitates addition of extra metrics in the folder being automatically implemented in the next round of analytics.
+Metrics measured:
+Brisque- Measures the quality of the image. A lower score indicates a better quality image. If this value is above 50, you probably have a noisy or blurry image.
+Tags- This returns relevant tags based on the image. For example, a picture of a field might return tags "grass", "meadow", "green" etc.
+Trend Search- This takes the tags that were generated from the tag metric and checks for the popularity/relevance of that tag.
+Reverse Image Search- This metric finds similar images to the one uploaded, so you can see how unique an image is.
+Type- This gets the type of image being uploaded, whether it's clip art, a photograph etc.
 
 ### Running the app using Docker (Must have Docker installed and running)
 1. Pull the nikolaik/python-nodejs Docker image with the command "docker pull nikolaik/python-nodejs". This image has Python and Node.js installed which are both needed for the project.
