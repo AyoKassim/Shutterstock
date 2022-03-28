@@ -109,11 +109,6 @@
   padding-top: 5px;
 }
 
-.uploadForm{
-  padding-top: 100px;
-  padding-left: 20%;
-  
-}
 
 .title{
   padding-top: 100px;
@@ -123,6 +118,16 @@
 .subText{
   text-align: center;
   padding-top: 50px;
+}
+
+.uploadForm{
+  max-width: 450px;
+  padding: 20px;
+  margin: 30px auto;
+  background-color: rgb(168, 164, 164);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 5px;
 }
 
 @media (max-width: 600px) {

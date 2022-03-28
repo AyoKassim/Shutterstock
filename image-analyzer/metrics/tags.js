@@ -7,7 +7,7 @@ const tagFile = `./tagsFolder/tags.json`;
 module.exports = async function (name) {
   //create formdata to contain the image data
   const form = new formdata();
-  form.append("image", fs.createReadStream(`./uploads/${name}`));
+  form.append("image", fs.createReadStream(`./public/${name}`));
 
   //create the custom headers for the axios config object
   const fheaders = form.getHeaders();
