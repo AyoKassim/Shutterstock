@@ -3,11 +3,10 @@ const createReadStream = require('fs').createReadStream
 const path = require("path");
 const async = require('async');
 const https = require('https');
-import { ComputerVisionClient } from '@azure/cognitiveservices-computervision';
+const { ComputerVisionClient } = require('@azure/cognitiveservices-computervision');
 import Image from 'next/image'
 //import vibrant from 'vibrant';
-const computerVisionClient = require('@azure/cognitiveservices-computervision').ComputerVisionClient;
-const APICred = require('@azure/ms-rest-js').ApiKeyCredentials;
+const { CognitiveServicesCredentials } = require('@azure/ms-rest-azure-js');
 
 //module.exports = function gammaValue(uploadName){
     //Caman("image-id", function(){
@@ -41,36 +40,20 @@ const APICred = require('@azure/ms-rest-js').ApiKeyCredentials;
     const key = process.env.AZURE_KEY;
     const endpoint = process.env.AZURE_ENDPOINT;
 
-    const computerVisionClient = new ComputerVisionClient(
-      new ApiKeyCredentials({inHeader: {'SWENG-key': key} }), endpoint
-    );
+    const client = new ComputerVisionClient(new CognitiveServicesCredentials(key), endpoint);
 
-module.exports = function computerVision(uploadName) {
-  async.series([
-    async function () {
+module.exports = async function computerVision(uploadName) {
       //const form = new formdata();
       //form.append("image", fs.createReadStream(`./uploads/${uploadName}`));
 
-      const imageFile = fs.readFileSync(`./uploads/${uploadName}`);
-      const based64 = Buffer.from(imageFile).toString("base64");
+      const imageFile = fs.readFileSync(`./public/${uploadName}`);
 
       const isIt = flag => flag ? 'is' : "isn't";
 
       console.log('Analyzing...');
-      const sfw = (await computerVisionClient.analyzeImage(imageFile,
-        {visualFeatures: ['Adult']})).sfw
-        console.log(`This probably ${isIt(sfw.isAdultContent)} adult content (${sfw.adultScore.toFixed(4)} score)`);
-    },
-    function () {
-      return new Promise((resolve) => {
-        resolve();
-      })
-    }
-  ], (err) => {
-    throw (err);
-  });
+      const sfw = (await client.analyzeImageInStream(imageFile.buffer,
+        {visualFeatures: ['Adult']})).adult
+        console.log(`This probably ${isIt(sfw.isAdultContent)} adult content (${sfw.adultScore} score)`);
 
-  return computerVision();
+  return sfw;
 }
-
-//computerVision();
