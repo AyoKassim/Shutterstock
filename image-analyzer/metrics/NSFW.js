@@ -1,3 +1,4 @@
+
 const fs = require("fs");
 const createReadStream = require('fs').createReadStream
 const path = require("path");
@@ -56,4 +57,5 @@ module.exports = async function computerVision(uploadName) {
         console.log(`This probably ${isIt(sfw.isAdultContent)} adult content (${sfw.adultScore} score)`);
 
   return sfw;
+
 }

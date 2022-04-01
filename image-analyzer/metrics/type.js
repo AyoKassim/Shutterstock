@@ -33,4 +33,5 @@ function getType(imageType){
       return 'line drawing';
   }
   return 'photo';
+
 }
