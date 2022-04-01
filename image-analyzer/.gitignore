@@ -35,8 +35,6 @@ yarn-error.log*
 .vercel
 
 uploads/
-<<<<<<< HEAD
 public/
-=======
-.env
->>>>>>> main
+image-analyzer/.env
+
