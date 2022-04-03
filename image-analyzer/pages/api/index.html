@@ -26,7 +26,9 @@
       .img-res{
         float: left;
         width: 100%;
+        object-fit: cover;
         max-height: 500px;
+        max-width: 650px;
         margin-right: 15px;
         margin-bottom: 10px;
       }
@@ -36,7 +38,14 @@
         text-align: center;
         
       }
-
+      .dot {
+        height: 15px;
+        width: 15px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        margin-bottom: -2px;
+      }
       
     </style>
     <style>
@@ -104,37 +113,78 @@
           
 
           //console.log(`data is: ${data}`);
-
+          var points = 0;
           document.getElementById("results").innerHTML = `
           <div class = "photo-res">
             <img class = "img-res" src = "/${data["name"]}"/>
+            <p><strong>Overall Score: </strong> <span id = "overall"></span> <span class="dot" id = "points"></span></p>
             <p><strong>Image name: </strong> ${data["name"]}</p>
-            <p><strong>Brisque Score: </strong>${data["brisque"]}</p>
-            <p><strong>Amount of similar images found: </strong>${data["reverse-image-search"]}</p>
-            <p><strong>Size of image uploaded: </strong>${data["size"]} bytes</p>
+            <p><strong>Brisque Score: </strong>${data["brisque"]} <span class="dot" id = "brisque"></span></p>
+            <p><strong>Amount of similar images found: </strong>${data["reverse-image-search"]} <span class="dot" id = "similar"></span></p>
+            <p><strong>Size of image uploaded: </strong>${data["size"]} bytes <span class="dot" id = "size"></span></p>
+            <p><strong>Trendiness: </strong>${data["trendSearch"]} <span class="dot" id = "trend"></span></p>
             <p><strong>Suggested Tags: </strong>${data.tags.result.tags[0].tag.en}, ${data.tags.result.tags[1].tag.en}, ${data.tags.result.tags[2].tag.en}, ${data.tags.result.tags[3].tag.en}, ${data.tags.result.tags[4].tag.en}</p>
-            <p><strong>Trendiness: </strong>${data["trendSearch"]}</p>
           </div>
           `
-          /**
-          const keys = Object.keys(data);
-          const values = Object.values(data);
-          for(let i = 0; i < keys.length; i++){
-            const key = keys[i]; const value = values[i];
-            if(key == "tags"){
-              key.result.tags[1]
-              var text = document.createTextNode(key.result.tags[1]);
-              var tag = document.createElement("h2");
-            }else{
-            var tag = document.createElement("h2");
-            var text = document.createTextNode(key + " " + value); 
-            }
-            tag.style = 'text-align: center;';
-            tag.appendChild(text); // <p>TEST TEXT</p>
-            var element = document.getElementsByTagName("body")[0];
-            element.appendChild(tag); // <body> <p>TEST TEXT</p> </body>
+         
+          
+          if(data["brisque"] < 25){
+            document.getElementById("brisque").style.backgroundColor = "green";
+            points += 5;
+          }else if(data["brisque"] > 25 && data["brisque"] < 50){
+            document.getElementById("brisque").style.backgroundColor = "orange";
+            points += 2;
+          }else{
+            document.getElementById("brisque").style.backgroundColor = "red";
+            points -= 2;
           }
-          **/
+
+         
+          var reverse = data["reverse-image-search"];
+          if(reverse < 500){
+            document.getElementById("similar").style.backgroundColor = "green";
+            points += 5;
+          }else if(reverse >= 500 && reverse < 700){
+            document.getElementById("similar").style.backgroundColor = "orange";
+            points += 2;
+          }else{
+            document.getElementById("similar").style.backgroundColor = "red";
+            points -= 2;
+          }
+
+          var size = data["size"]
+          if(size < 1000000){
+            document.getElementById("size").style.backgroundColor = "green";
+            points += 5;
+          }else if(size >= 1000000 && size < 5000000){
+            document.getElementById("size").style.backgroundColor = "orange";
+            points += 2;
+          }else{
+            document.getElementById("size").style.backgroundColor = "red";
+            points -= 2;
+          }
+
+          var trend = data["trendSearch"];
+          if(trend >= 0.75){
+            document.getElementById("trend").style.backgroundColor = "green";
+            points += 5;
+          }else if(trend < 0.75  && trend >= 0.6){
+            document.getElementById("trend").style.backgroundColor = "orange";
+            points += 2;
+          }else{
+            document.getElementById("trend").style.backgroundColor = "red";
+            points -= 2;
+          }
+
+          document.getElementById("overall").innerHTML = points;
+          if(points >= 15){
+            document.getElementById("points").style.backgroundColor = "green";
+          }else if(points >=10){
+            document.getElementById("points").style.backgroundColor = "orange";
+          }else{
+            document.getElementById("points").style.backgroundColor = "red";
+          }    
+
         }
         getStuff();
       </script>
