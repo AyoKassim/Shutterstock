@@ -5,8 +5,6 @@ const path = require("path");
 const async = require('async');
 const https = require('https');
 const { ComputerVisionClient } = require('@azure/cognitiveservices-computervision');
-import Image from 'next/image'
-//import vibrant from 'vibrant';
 const { CognitiveServicesCredentials } = require('@azure/ms-rest-azure-js');
 
 //module.exports = function gammaValue(uploadName){
