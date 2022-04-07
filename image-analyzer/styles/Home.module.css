@@ -143,6 +143,25 @@
   text-align: center;
 }
 
+.loading{
+  display: none;
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%)
+}
+.loading p{
+  font-size: 150px;
+}
+.loading p6{
+  font-size: 25px;
+  position: absolute;
+  margin: auto;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
 
 
 @media (max-width: 600px) {
