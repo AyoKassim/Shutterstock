@@ -1,7 +1,7 @@
 # Shutterstock Image Analysis and Rating
 
 This is a project where we design a web-based applcation that enables users to upload images and receive feedback about them and their sales potential.
-The project builds off a default Next.js template project by adding image upload functionality to the main page, storing the upload, analyzing the image using various metrics, and making this data available at an API route which can be called from the front end.
+The project builds off a default Next.js template project by adding image upload functionality to the main page, storing the upload, analyzing the image using various metrics, and making this data available via a request to the server from the front-end.
 
 #### API Keys
 Our project makes use of some online APIs for which one must acquire credentials to use.
