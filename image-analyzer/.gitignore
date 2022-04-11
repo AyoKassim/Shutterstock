@@ -34,7 +34,9 @@ yarn-error.log*
 # vercel
 .vercel
 
-uploads/
-public/
-image-analyzer/.env
+/public
+/tagsFolder
+/brisquePython
+.env
+
 
