@@ -37,7 +37,7 @@ apiRoute.post(upload.single('image'), async (req, res, next) => {
     {
 	  resized = false;
       const metricName = fileName.split('.')[0] // only consider the name and ignore '.js' at the end of the file name, e.g. size in "size.js"
-	  if(metricName == 'reverse-image-search' || metricName == 'nsfw' || metricName == 'type' || metricName == 'brisque' || metricName == 'tags'){
+	  if(metricName == 'reverse-image-search' || metricName == 'NSFW' || metricName == 'type' || metricName == 'brisque' || metricName == 'tags'){
 		resized = true;
 		sharp(`./public/${req.file.originalname}`)
 		.resize({
