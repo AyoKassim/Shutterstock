@@ -112,6 +112,7 @@
 
 .title{
   padding-top: 100px;
+  padding-bottom: 50px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -124,11 +125,44 @@
   max-width: 450px;
   padding: 20px;
   margin: 30px auto;
-  background-color: rgb(168, 164, 164);
+  background-color: #f3f4f5;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   border-radius: 5px;
 }
+
+.submit{
+  background-color:#f54336;
+  color: white;
+  padding: 5px;
+  border: 0px;
+  margin: 10px;
+  border-radius: 5px;
+}
+.subP{
+  text-align: center;
+}
+
+.loading{
+  display: none;
+  position: absolute;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%)
+}
+.loading p{
+  font-size: 150px;
+}
+.loading p6{
+  font-size: 25px;
+  position: absolute;
+  margin: auto;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+
 
 @media (max-width: 600px) {
   .grid {
