@@ -36,7 +36,7 @@
         margin: 0px auto;
         overflow: hidden;
         text-align: center;
-        
+
       }
       .dot {
         height: 15px;
@@ -46,7 +46,7 @@
         display: inline-block;
         margin-bottom: -2px;
       }
-      
+
     </style>
     <style>
       .footer {
@@ -85,32 +85,32 @@
             <h2 style="margin: 30px auto; padding: 20px; padding-top: 0px; margin-top: 0px;">Explanation of Metrics</h2>
             <p style="margin: 30px auto; padding: 20px;" ><strong>Brisque Analysis:</strong> A smaller score indicates better perceptual quality. Ideally less than 20, anything above 50 is most likely blurry or noisy.
             If your score is high, try retaking the image with more light or keep the camera steadier to reduce blurriness</p>
-            <p style="margin: 30px auto; padding: 20px;" ><strong>Similar Images:</strong> This is how many images that look similar to your uploaded image in the shutterstock image database. A low score indicates
+            <p style="margin: 30px auto; padding: 20px;" ><strong>Similar Images:</strong> This is how many images that look similar to your uploaded image in the Shutterstock image database. A low score indicates
             that your image is unique. Try to keep this figure below 500.</p>
-            <p style="margin: 30px auto; padding: 20px;" ><strong>Sugested Tags:</strong> These are tags are generated based on the image content, and help with identifying your image, which allows customers to find your
+            <p style="margin: 30px auto; padding: 20px;" ><strong>Suggested Tags:</strong> These are tags are generated based on the image content, and help with identifying your image, which allows customers to find your
             image more easily.</p>
-            <p style="margin: 30px auto; padding: 20px;" ><strong>Trendiness:</strong> This is scored out of 1. The closer to one the more topical the associated tags are which indicates a higher likelyhood to sell</p>
+            <p style="margin: 30px auto; padding: 20px;" ><strong>Trendiness:</strong> This is scored out of 1. The closer to 1, the more topical the associated tags are which indicates a higher likelihood to sell.</p>
           </div>
         </div>
       </div>
       <div class="back-button">
       <form action="http://localhost:3000/" style=" padding-bottom: 30px;">
-        <input type="submit" style="border: 0px; 
+        <input type="submit" style="border: 0px;
         background-color:#f54336;
         color: white;
         padding: 5px;
-       
+
         border-radius: 5px;" value="Back to Image Upload" />
       </form>
     </div>
-    
+
       <script>
         async function getStuff()
         {
-          
+
           const response = await fetch(new Request('/generated.json'))
           const data = await response.json();
-          
+
 
           //console.log(`data is: ${data}`);
           var points = 0;
@@ -126,8 +126,8 @@
             <p><strong>Suggested Tags: </strong>${data.tags.result.tags[0].tag.en}, ${data.tags.result.tags[1].tag.en}, ${data.tags.result.tags[2].tag.en}, ${data.tags.result.tags[3].tag.en}, ${data.tags.result.tags[4].tag.en}</p>
           </div>
           `
-         
-          
+
+
           if(data["brisque"] < 25){
             document.getElementById("brisque").style.backgroundColor = "green";
             points += 5;
@@ -139,7 +139,7 @@
             points -= 2;
           }
 
-         
+
           var reverse = data["reverse-image-search"];
           if(reverse < 500){
             document.getElementById("similar").style.backgroundColor = "green";
@@ -183,13 +183,13 @@
             document.getElementById("points").style.backgroundColor = "orange";
           }else{
             document.getElementById("points").style.backgroundColor = "red";
-          }    
+          }
 
         }
         getStuff();
       </script>
 
 
-    
+
 </body>
 </html>
