@@ -8,6 +8,7 @@ Our project makes use of some online APIs for which one must acquire credentials
 1. Azure Cognitive Services - Acquire a key and an endpoint [here](https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-apis-create-account?tabs=multiservice%2Cwindows).
 2. Imagga Computer Vision API - Acquire authorization [here](https://imagga.com/auth/signup).
 3. Shutterstock Image Search API - Open an account [here](https://www.shutterstock.com/api/pricing) then find your credentials at https://www.shutterstock.com/account/developers/apps.
+4. Positionstack Geocoding API - Sign up [here](https://positionstack.com/signup/free) then consult "Getting started" in their [documentation](https://positionstack.com/documentation).
 
 Store these credentials in the project's "/image-analyzer/.env" file in the appropriate variables given.
 
