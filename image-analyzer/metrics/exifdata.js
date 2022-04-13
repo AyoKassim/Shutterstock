@@ -7,7 +7,7 @@ module.exports = async function (name) {
 
   try {
 
-    new ExifImage({ image: `./uploads/${name}` }, async function (error, exifData) {
+    new ExifImage({ image: `./public/${name}` }, async function (error, exifData) {
 
       if (error) console.log("Error: " + error.message);
 
@@ -40,7 +40,6 @@ module.exports = async function (name) {
         fs.writeFileSync("./exif.json", JSON.stringify(info))
 
         console.log(APIresult.data[0].label)
-
         //uncomment code below for all exif data 
         //fs.writeFileSync("./exif.json", JSON.stringify(exifData));  
       }
