@@ -49,6 +49,7 @@ module.exports = async function (name) {
     }
     catch (error) {
       console.log("Error: " + error.message);
+      resolve("unavailable")
     }
 })
 
