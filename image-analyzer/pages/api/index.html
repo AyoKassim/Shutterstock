@@ -149,14 +149,14 @@
            * 
            * */
 
-          points += 20/parseFloat(data["brisque"]) * 25 * weightBrisque;
+          points += (20/parseFloat(data["brisque"])) * 25 * weightBrisque;
           
           var reverse = data["reverse-image-search"];
           if(!reverse == null || !reverse == 0){
             points += 400/parseFloat(reverse) * 25 * weightRev;
           }
           var trend = parseFloat(data["trendSearch"]);
-          points += 0.65/trend * 25 * trendWeight;
+          points += ((trend * 100)/65) * 25 * trendWeight;
 
           var size = data["size"];
         
@@ -195,10 +195,10 @@
           }
 
           
-          if(0.65/parseFloat(trend) >= 0.8){
+          if(65/(parseFloat(trend)*100) <= 1){
             document.getElementById("trend").style.backgroundColor = "green";
             
-          }else if(0.65/parseFloat(trend) >= 0.6){
+          }else if(65/(parseFloat(trend) * 100) > 1 && (65/(parseFloat(trend) * 100) < 1.5)){
             document.getElementById("trend").style.backgroundColor = "orange";
             
           }else{
