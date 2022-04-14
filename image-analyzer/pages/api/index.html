@@ -114,6 +114,9 @@
 
           //console.log(`data is: ${data}`);
           var points = 0;
+          var weightBrisque = 1;
+          var weightRev = 1;
+          var trendWeight = 1;
           document.getElementById("results").innerHTML = `
           <div class = "photo-res">
             <img class = "img-res" src = "/${data["name"]}"/>
@@ -126,64 +129,89 @@
             <p><strong>Suggested Tags: </strong>${data.tags.result.tags[0].tag.en}, ${data.tags.result.tags[1].tag.en}, ${data.tags.result.tags[2].tag.en}, ${data.tags.result.tags[3].tag.en}, ${data.tags.result.tags[4].tag.en}</p>
           </div>
           `
+          /** Data
+           * Brisque: 
+            Avg: 41.40052631578948|49.3885
+            Max: 78.62|91.55
+            Min: 0.74|3.39
 
+            Reverse Image Search: 
+            Avg: 449.5263157894737| 444.5
+            Max: 497|499
+            Min: 261|218
 
-          if(data["brisque"] < 25){
-            document.getElementById("brisque").style.backgroundColor = "green";
-            points += 5;
-          }else if(data["brisque"] > 25 && data["brisque"] < 50){
-            document.getElementById("brisque").style.backgroundColor = "orange";
-            points += 2;
-          }else{
-            document.getElementById("brisque").style.backgroundColor = "red";
-            points -= 2;
-          }
+            Trendiness: 
+            Avg: 0.6422105263157893|0.62
+            Max: 0.804|0.37
+            Min: 0.411| 0.678
+           * 
+           * 
+           * */
 
-
+          point += 20/data["brisque"] * 25 * weightBrisque;
           var reverse = data["reverse-image-search"];
-          if(reverse < 500){
-            document.getElementById("similar").style.backgroundColor = "green";
-            points += 5;
-          }else if(reverse >= 500 && reverse < 700){
-            document.getElementById("similar").style.backgroundColor = "orange";
-            points += 2;
-          }else{
-            document.getElementById("similar").style.backgroundColor = "red";
-            points -= 2;
-          }
+          points += 400/reverse * 25 * weightRev;
+          var trend = data["trendSearch"];
+          points += 0.65/trend * 25 * trendWeight;
 
           var size = data["size"]
+        
           if(size < 1000000){
             document.getElementById("size").style.backgroundColor = "green";
-            points += 5;
+            
           }else if(size >= 1000000 && size < 5000000){
             document.getElementById("size").style.backgroundColor = "orange";
-            points += 2;
+            
           }else{
             document.getElementById("size").style.backgroundColor = "red";
-            points -= 2;
-          }
-
-          var trend = data["trendSearch"];
-          if(trend >= 0.75){
-            document.getElementById("trend").style.backgroundColor = "green";
-            points += 5;
-          }else if(trend < 0.75  && trend >= 0.6){
-            document.getElementById("trend").style.backgroundColor = "orange";
-            points += 2;
-          }else{
-            document.getElementById("trend").style.backgroundColor = "red";
-            points -= 2;
+            
           }
 
           document.getElementById("overall").innerHTML = points;
-          if(points >= 15){
+          if(points >= 70){
             document.getElementById("points").style.backgroundColor = "green";
-          }else if(points >=10){
+          }else if(points >=50){
             document.getElementById("points").style.backgroundColor = "orange";
           }else{
             document.getElementById("points").style.backgroundColor = "red";
           }
+          
+          if(20/data["brisque"] >= .8){
+            document.getElementById("brisque").style.backgroundColor = "green";
+           
+          }else if(20/data["brisque"] >= .6){
+            document.getElementById("brisque").style.backgroundColor = "orange";
+           
+          }else{
+            document.getElementById("brisque").style.backgroundColor = "red";
+            
+          }
+
+          if(400/reverse >= .8){
+            document.getElementById("similar").style.backgroundColor = "green";
+            
+          }else if(400/reverse > .6){
+            document.getElementById("similar").style.backgroundColor = "orange";
+            
+          }else{
+            document.getElementById("similar").style.backgroundColor = "red";
+            
+          }
+
+         
+          if(0.65/trend >= .8){
+            document.getElementById("trend").style.backgroundColor = "green";
+            
+          }else if(0.65/trend >= .6){
+            document.getElementById("trend").style.backgroundColor = "orange";
+            
+          }else{
+            document.getElementById("trend").style.backgroundColor = "red";
+           
+          }
+          
+
+          
 
         }
         getStuff();
