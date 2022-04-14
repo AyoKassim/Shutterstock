@@ -26,20 +26,7 @@ var resized = false;
 
 //process a single image being uploaded
 apiRoute.post(upload.single('image'), async (req, res, next) => {
-
-  const response = {} //will contain data pertaining to different analysis performend on the image
-
-  const metricFileNames = fs.readdirSync('./metrics')
-  //await metrics(metricFileNames, req, response)
-
-  response['name'] = req.file.originalname;
-  for(const fileName of metricFileNames)
-    {
-	  resized = false;
-      const metricName = fileName.split('.')[0] // only consider the name and ignore '.js' at the end of the file name, e.g. size in "size.js"
-	  if(metricName == 'reverse-image-search' || metricName == 'NSFW' || metricName == 'type' || metricName == 'brisque' || metricName == 'tags'){
-		resized = true;
-		sharp(`./public/${req.file.originalname}`)
+  sharp(`./public/${req.file.originalname}`)
 		.resize({
 			// set width to 2000
 			width: 2000,
@@ -51,10 +38,20 @@ apiRoute.post(upload.single('image'), async (req, res, next) => {
 			withoutEnlargement: true
 		})
 		.toFile(`./public/small_${req.file.originalname}`)
-	  }
-      const analyzer = require(`../../metrics/${fileName}`) //imports a function that uses filename to find upload and returns an analysis JSON
-      const metric =  await analyzer(resized ? `small_${req.file.originalname}` : req.file.originalname)
-      response[`${metricName}`] =  metric
+
+  const response = {} //will contain data pertaining to different analysis performend on the image
+
+  const metricFileNames = fs.readdirSync('./metrics')
+  //await metrics(metricFileNames, req, response)
+
+  response['name'] = req.file.originalname;
+  for(const fileName of metricFileNames)
+    {
+    const metricName = fileName.split('.')[0] // only consider the name and ignore '.js' at the end of the file name, e.g. size in "size.js"
+	  resized = (metricName == 'reverse-image-search' || metricName == 'NSFW' || metricName == 'type' || metricName == 'brisque' || metricName == 'tags')
+    const analyzer = require(`../../metrics/${fileName}`) //imports a function that uses filename to find upload and returns an analysis JSON
+    const metric =  await analyzer(resized ? `small_${req.file.originalname}` : req.file.originalname)
+    response[`${metricName}`] =  metric
 	  console.log(`${metricName} complete.`)
     }
 
