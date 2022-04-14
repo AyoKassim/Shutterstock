@@ -117,6 +117,7 @@
           var weightBrisque = 1;
           var weightRev = 1;
           var trendWeight = 1;
+
           document.getElementById("results").innerHTML = `
           <div class = "photo-res">
             <img class = "img-res" src = "/${data["name"]}"/>
@@ -148,25 +149,61 @@
            * 
            * */
 
-          point += 20/data["brisque"] * 25 * weightBrisque;
+          points += 20/parseFloat(data["brisque"]) * 25 * weightBrisque;
+          
           var reverse = data["reverse-image-search"];
           if(!reverse == null || !reverse == 0){
-            points += 400/reverse * 25 * weightRev;
+            points += 400/parseFloat(reverse) * 25 * weightRev;
           }
-          var trend = data["trendSearch"];
+          var trend = parseFloat(data["trendSearch"]);
           points += 0.65/trend * 25 * trendWeight;
 
-          var size = data["size"]
+          var size = data["size"];
         
           if(size < 1000000){
             document.getElementById("size").style.backgroundColor = "green";
-            
+            points += 5;
           }else if(size >= 1000000 && size < 5000000){
             document.getElementById("size").style.backgroundColor = "orange";
-            
+            points += 1;
           }else{
             document.getElementById("size").style.backgroundColor = "red";
+            points += -2;
+          }
+
+          
+          if(20/parseFloat(data["brisque"]) >= 0.8){
+            document.getElementById("brisque").style.backgroundColor = "green";
+           
+          }else if(20/parseFloat(data["brisque"]) >= 0.6){
+            document.getElementById("brisque").style.backgroundColor = "orange";
+           
+          }else{
+            document.getElementById("brisque").style.backgroundColor = "red";
             
+          }
+
+          if(400/parseFloat(reverse) >= 0.8){
+            document.getElementById("similar").style.backgroundColor = "green";
+            
+          }else if(400/parseFloat(reverse) > 0.6){
+            document.getElementById("similar").style.backgroundColor = "orange";
+            
+          }else{
+            document.getElementById("similar").style.backgroundColor = "red";
+            
+          }
+
+          
+          if(0.65/parseFloat(trend) >= 0.8){
+            document.getElementById("trend").style.backgroundColor = "green";
+            
+          }else if(0.65/parseFloat(trend) >= 0.6){
+            document.getElementById("trend").style.backgroundColor = "orange";
+            
+          }else{
+            document.getElementById("trend").style.backgroundColor = "red";
+           
           }
 
           document.getElementById("overall").innerHTML = points;
@@ -176,40 +213,6 @@
             document.getElementById("points").style.backgroundColor = "orange";
           }else{
             document.getElementById("points").style.backgroundColor = "red";
-          }
-          
-          if(20/data["brisque"] >= .8){
-            document.getElementById("brisque").style.backgroundColor = "green";
-           
-          }else if(20/data["brisque"] >= .6){
-            document.getElementById("brisque").style.backgroundColor = "orange";
-           
-          }else{
-            document.getElementById("brisque").style.backgroundColor = "red";
-            
-          }
-
-          if(400/reverse >= .8){
-            document.getElementById("similar").style.backgroundColor = "green";
-            
-          }else if(400/reverse > .6){
-            document.getElementById("similar").style.backgroundColor = "orange";
-            
-          }else{
-            document.getElementById("similar").style.backgroundColor = "red";
-            
-          }
-
-         
-          if(0.65/trend >= .8){
-            document.getElementById("trend").style.backgroundColor = "green";
-            
-          }else if(0.65/trend >= .6){
-            document.getElementById("trend").style.backgroundColor = "orange";
-            
-          }else{
-            document.getElementById("trend").style.backgroundColor = "red";
-           
           }
           
 
