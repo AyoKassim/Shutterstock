@@ -206,7 +206,7 @@
            
           }
 
-          document.getElementById("overall").innerHTML = points;
+          document.getElementById("overall").innerHTML = `${points.toFixed(2)}`;
           if(points >= 70){
             document.getElementById("points").style.backgroundColor = "green";
           }else if(points >=50){
