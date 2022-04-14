@@ -10,7 +10,7 @@ module.exports = async function (name) {
 
       new ExifImage({ image: `./public/${name}` }, async function (error, exifData) {
   
-        if (error) console.log("Error: " + error.message);
+        if (error) {console.log("Error: " + error.message); resolve('unavailable')}
   
         else {
   
