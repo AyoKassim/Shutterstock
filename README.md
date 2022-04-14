@@ -21,6 +21,9 @@ Metrics measured:
 4.)Reverse Image Search- This metric finds similar images to the one uploaded, so you can see how unique an image is.  
 5.)Type- This gets the type of image being uploaded, whether it's clip art, a photograph etc.  
 
+##### Metric Weights
+To give the user a general score for their image, a weighted combination of each metric's score is summed. The weights can be tweaked according to how great or not one values a given metric. The weights can be found at the top of the script at the bottom of the pages/api/index.html document. As it stands, each metric is weighted evenly.
+
 ### Running the app using Docker (Must have Docker installed and running)
 1. Pull the nikolaik/python-nodejs Docker image with the command "docker pull nikolaik/python-nodejs". This image has Python and Node.js installed which are both needed for the project.
 2. Clone the repository from GitHub using "git clone https://github.com/AyoKassim/Shutterstock.git".
