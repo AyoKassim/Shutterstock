@@ -149,11 +149,17 @@
            * 
            * */
 
-          points += (20/parseFloat(data["brisque"])) * 25 * weightBrisque;
+           const mins = {
+             brisque:3,
+             rev:218,
+             trend:0.4
+           }
+
+          points += (20/parseFloat(Math.max(data["brisque"], mins.brisque))) * 25 * weightBrisque;
           
           var reverse = data["reverse-image-search"];
           if(!reverse == null || !reverse == 0){
-            points += 400/parseFloat(reverse) * 25 * weightRev;
+            points += 400/parseFloat(Math.max(reverse,mins.rev)) * 25 * weightRev;
           }
           var trend = parseFloat(data["trendSearch"]);
           points += ((trend * 100)/65) * 25 * trendWeight;
@@ -168,7 +174,6 @@
             points += 1;
           }else{
             document.getElementById("size").style.backgroundColor = "red";
-            points += -2;
           }
 
           
