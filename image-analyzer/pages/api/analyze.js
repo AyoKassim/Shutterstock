@@ -2,6 +2,9 @@
 import nextConnect from "next-connect";
 import multer from "multer";
 
+const sizeof = require('image-size')
+const MAX_DIMENSION = 500
+
 //route setup with next connect
 const apiRoute = nextConnect({
   onNoMatch(req, res) {
@@ -28,18 +31,17 @@ const sleep = (milliseconds) => {
 
 //process a single image being uploaded
 apiRoute.post(upload.single('image'), async (req, res, next) => {
+  const dimensions = sizeof(`./public/${req.file.originalname}`)
   sharp(`./public/${req.file.originalname}`)
 		.resize({
-			// set width to 1000
-			width: 1000,
-			// set height to 1000
-			height: 1000,
+			width: MAX_DIMENSION,
+			height: MAX_DIMENSION,
       // only shrink the image
       withoutEnlargement: true,
 			// make image as large as possible without losing aspect ratio
 			fit: sharp.fit.inside,
 		})
-		.toFile(`./public/${req.file.originalname}`)
+		.toFile(`./public/small_${req.file.originalname}`)
 
   await sleep(500)
 
@@ -52,10 +54,10 @@ apiRoute.post(upload.single('image'), async (req, res, next) => {
   for(const fileName of metricFileNames)
     {
     const metricName = fileName.split('.')[0] // only consider the name and ignore '.js' at the end of the file name, e.g. size in "size.js"
-	  resized = (metricName == 'reverse-image-search' || metricName == 'NSFW' || metricName == 'type' || metricName == 'brisque' || metricName == 'tags')
+	  resized = (dimensions.width > MAX_DIMENSION || dimensions.height > MAX_DIMENSION) && (metricName == 'reverse-image-search' || metricName == 'NSFW' || metricName == 'type' || metricName == 'brisque' || metricName == 'tags')
     const analyzer = require(`../../metrics/${fileName}`) //imports a function that uses filename to find upload and returns an analysis JSON
     //const metric =  await analyzer(resized ? `small_${req.file.originalname}` : req.file.originalname)
-    const metric =  await analyzer(req.file.originalname)
+    const metric =  await analyzer(resized? `small_${req.file.originalname}` : req.file.originalname)
     response[`${metricName}`] =  metric
 	  console.log(`${metricName} complete.`)
     }
