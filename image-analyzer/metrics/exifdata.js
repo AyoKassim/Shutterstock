@@ -31,7 +31,7 @@ module.exports = async function (name) {
         const long = result.Longitude
 
         //passing in parameters( lat and long) for location API call 
-        const APIcall = await fetch(`http://api.positionstack.com/v1/reverse?access_key=${process.env.key}&query=${lat[2]},${long[2]}`)
+        const APIcall = await fetch(`http://api.positionstack.com/v1/reverse?access_key=${process.env.POSITIONSTACK_KEY}&query=${lat[2]},${long[2]}`)
 
         const APIresult = await APIcall.json()
 
