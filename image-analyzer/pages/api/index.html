@@ -150,7 +150,9 @@
 
           point += 20/data["brisque"] * 25 * weightBrisque;
           var reverse = data["reverse-image-search"];
-          points += 400/reverse * 25 * weightRev;
+          if(!reverse == null || !reverse == 0){
+            points += 400/reverse * 25 * weightRev;
+          }
           var trend = data["trendSearch"];
           points += 0.65/trend * 25 * trendWeight;
 
