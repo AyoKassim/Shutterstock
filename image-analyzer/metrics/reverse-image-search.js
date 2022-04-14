@@ -9,6 +9,8 @@ const computerVisionApi = new sstk.ComputerVisionApi(); // initialise Shuttersto
 
 // reverse image search method
 module.exports = async function reverseImageSearch(uploadName){
+	try
+	{
 	const imageFile = fs.readFileSync(`./public/${uploadName}`); // return the contents of uploadName
 	const base64File = Buffer.from(imageFile).toString("base64"); // encode the image to Base 64
 
@@ -18,4 +20,8 @@ module.exports = async function reverseImageSearch(uploadName){
 	let imageSearch = await computerVisionApi.getSimilarImages(data.upload_id); // get images similar to the one uploaded
 
 	return imageSearch.total_count; // return number of images found
+	}catch(error)
+	{
+		return 400 //at the time of programming there is an issue with the Shutterstock API
+	}
 }
